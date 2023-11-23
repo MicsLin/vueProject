@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body{
+    overflow-x:hidden;
+  }
+  #app{
+    max-width: 1920px;
+    min-width: 320px;
+    margin:auto;
+    overflow-x:hidden;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+    .mainPaddingX{
+      @apply px-20;
+    }
+    .Section{
+      width: 100%;
+      /* 144px=>160px for fade-up */
+      /* height: calc(100vh - 160px); */
+      position: relative;
+    }
+    .SectionInside{
+      width:100%;
+      height:calc(100% - 80px);
+    }
+    .Title{
+      @apply text-blue-title font-semibold text-4xl h-20 flex justify-center items-center;
+    }
+    .BackGroundImg{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0.3;
+    }
+    .Input{
+      @apply w-full p-2 text-black border rounded-md focus:outline-blue-contact;
+    }
+    .ButtonList{
+      @apply text-white bg-blue-600 hover:opacity-90 rounded-full;
+    }
+    .CardContainer{
+      @apply grid grid-cols-3 gap-5 lg:grid-cols-2 sm:grid-cols-1;
+    }
+    .Card{
+      max-width: 300px;
+      @apply w-11/12 h-64  relative cursor-pointer bg-gray-400 border rounded shadow-lg m-auto overflow-hidden hover:border-blue-600;
+    }
+    .infoDiv {
+      @apply absolute left-0 bottom-0 duration-1000 translate-y-20;
+    }
+    .Card:hover .infoDiv{
+      @apply translate-y-0;
+    }
+    .Card img {
+      @apply relative duration-1000 translate-y-0;
+    }
+    .Card:hover img {
+      @apply -translate-y-8;
+    }
+    .ServiceCardContainer{
+      @apply grid grid-cols-4 gap-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 text-black;
+    }
+    .ServiceCard{
+      @apply w-11/12 h-64 border rounded-xl shadow-lg m-auto overflow-hidden bg-gray-200 bg-opacity-20;
+    }
+    .ServiceCardTitle{
+      @apply flex justify-center items-center h-20 text-xl overflow-hidden;
+    }
+    .ServiceCardListDiv{
+      @apply flex items-center gap-5 py-px;
+    }
+    .flexCenter{
+      @apply flex justify-center items-center;
+    }
+    .popupTitle{
+      @apply text-xl pr-12 py-4 pl-4;
+    }
+    .popupHr{
+      @apply bg-gray-400 h-0.5;
+    }
+    .popupContent{
+      @apply p-4 grid grid-cols-1 gap-4;
+    }
+  
+    @media screen and (max-width:1023px) {
+      .mainPaddingX{
+        @apply px-4;
+      }
+    }
+  }
